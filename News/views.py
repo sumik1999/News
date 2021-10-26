@@ -70,6 +70,8 @@ class PostUpdateView(LoginRequiredMixin ,UserPassesTestMixin, UpdateView):
             return True
         return False
 
+    success_url='/blog'
+
     
 
 class PostDeleteView(LoginRequiredMixin ,UserPassesTestMixin, DeleteView): #?login required and all that needs to be at the left of delete view
