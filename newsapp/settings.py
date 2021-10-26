@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-f6zycze1p7yq9z@i+dh-h)c&2(27(0^o)nhr9uaat#t1q@9whb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'News.apps.NewsConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'whitenoise.runserver_nostatic',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
