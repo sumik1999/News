@@ -1,0 +1,15 @@
+{% extends 'News/Base.html'%} {% load crispy_forms_tags %} {% block content %}
+<div class="login-div">
+  <form method="POST">
+    {% csrf_token%}
+    <fieldset class="form-group">
+      <legend class="legend border-bottom mb-3">Blog Post</legend>
+      {{form | crispy}}
+    </fieldset>
+    <div class="form-group mt-2 d-grid gap-2 col-5 mx-auto ripple-surface">
+      <button class="btn btn-primary mt-2 mb-2" type="submit">Post</button>
+      <!-- both create and update will use this template -->
+    </div>
+  </form>
+</div>
+{% endblock %}

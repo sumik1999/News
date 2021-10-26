@@ -1,0 +1,24 @@
+{% extends 'News/Base.html'%} {% load crispy_forms_tags %} {% block content %}
+<div class="content-section">
+  <div class="media">
+    <img class="UserProfile-Image" src="{{ user.profile.image.url }}" alt="" />
+    <div class="media-body">
+      <h2 class="text-secondary">{{ user.username }}</h2>
+      <p class="text-secondary">{{ user.email }}</p>
+    </div>
+  </div>
+  <br /><br />
+  <div class="login-div">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token%}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-3 legend">Profile Info</legend>
+        {{ u_form | crispy}} {{ p_form | crispy}}
+      </fieldset>
+      <div class="form-group mt-2 d-grid gap-2 col-5 mx-auto ripple-surface">
+        <button class="btn btn-primary" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

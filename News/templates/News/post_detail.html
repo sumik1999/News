@@ -1,0 +1,42 @@
+{% extends 'News/Base.html'%} {% block content %}
+
+<!-- <article class="content-section"> -->
+<section>
+  <div class="media-body">
+    <div class="userinfo-container">
+      <img
+        class="UserProfile-Image"
+        src="{{ object.author.profile.image.url }}"
+        alt="User Profile image"
+      />
+
+      <div class="userInfo">
+        <span class="PostAuthor mr-2 ml-6" 
+          >{{object.author}}</span>
+        <br />
+        <small style="color: azure;margin-left: 2rem;">{{ object.date_posted | date:"F d,Y" }}</small>
+      </div>
+      {% if object.author == user %}
+      <!-- will be seen only if the user is the author -->
+
+      &nbsp;&nbsp;&nbsp;
+      
+      <div >
+        <a class="btn btn-success mb-2" style="align-self: center;" href="{% url 'post-update' object.id %}">
+          Update Post</a
+        >
+        <a class="btn btn-info" style="width: fit-content;"  href="{% url 'post-delete' object.id %}">
+          Delete Post</a
+        >
+      </div>
+
+      {% endif %}
+    </div>
+    <hr />
+    <p class="article-title">{{ object.title }}</p>
+    <p class="article-content">{{ object.content}}</p>
+  </div>
+</section>
+<!-- </article> -->
+
+{% endblock %}

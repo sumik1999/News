@@ -1,0 +1,20 @@
+{% extends 'News/Base.html'%} {% load crispy_forms_tags %} {% block content %}
+<div class="login-div">
+  <form method="POST">
+    {% csrf_token%}
+    <fieldset class="form-group">
+      <legend class="legend border-bottom mb-3">Join Today</legend>
+      {{form | crispy}}
+    </fieldset>
+    <div class="form-group mt-2 d-grid gap-2 col-5 mx-auto ripple-surface">
+      <button class="btn btn-primary" type="submit">Sign-up</button>
+    </div>
+  </form>
+  <div class="pt-2 border-top mt-3">
+    <small class="text-muted">
+      Already have an account? Log in instead
+      <a class="ml-2" href="{% url 'login'%}"> Log in </a>
+    </small>
+  </div>
+</div>
+{% endblock %}

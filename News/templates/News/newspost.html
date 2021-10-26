@@ -1,0 +1,18 @@
+{% extends 'News/Base.html'%}
+
+{% block content %}
+
+<div class="container" style="background-color: cornsilk;">
+    <figure class="figure">
+        <img src="{{image}}" class="figure-img img-fluid rounded" alt="..." style="width:500px; height:300px">
+        <figcaption class="figure-caption">News Image.</figcaption>
+    </figure>
+
+    <div class=""><h3>{{title}}</h3></div>
+    <div class="text-muted">{{date}}</div>
+    <p>{{content}}</p>
+
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,33 @@
+{% extends 'News/Base.html'%}
+
+{% block content %}
+
+
+<div class="container">
+        {% for article in articles %}
+        
+        <div class="card">
+          
+          <img src="{{ article.urlToImage }}" alt="">
+          <div class="card-info">
+            <h3 class="title">{{ article.title }}</h3>
+            <h4 class="date">{{ article.publishedAt | date:"Y-m-d"}}</h4>
+            
+            <p class="card-text">{{ article.content | slice:"200" }}</p>
+            <form action="/" method="POST">
+              <input type="hidden" name="title" value="{{ article.title}}">
+              <input type="hidden" name="content" value="{{ article.content }}">
+              <input type="hidden" name="date" value="{{ article.publishedAt}}">
+              <input type="hidden" name="image" value="{{ article.urlToImage }}">           
+
+              <div class="buttoncard"><input  type="submit" value="More">
+              {% csrf_token %}</form></div>
+            
+          </div>
+            
+          
+        </div>
+        {% endfor %}
+        
+    
+{% endblock %}

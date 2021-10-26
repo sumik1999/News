@@ -1,0 +1,13 @@
+{% extends 'News/Base.html'%}
+{% block content %}
+   <div class='media-body'>
+    <h2> You have been succesfully logged out!</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted"> 
+            Want to Log in again? <a class="ml-2" href="{% url 'login'%}"> Log in </a> 
+        </small>
+    </div>
+</div>
+
+    
+{% endblock %}
