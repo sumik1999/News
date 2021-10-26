@@ -14,7 +14,7 @@
             <h4 class="date">{{ article.publishedAt}}</h4>
             
             <p class="card-text">{{ article.content | slice:"200" }}</p>
-            <form action="/" method="POST">
+            <form method="POST">
               <input type="hidden" name="title" value="{{ article.title}}">
               <input type="hidden" name="content" value="{{ article.content }}">
               <input type="hidden" name="date" value="{{ article.publishedAt}}">
